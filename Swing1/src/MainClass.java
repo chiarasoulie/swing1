@@ -1,27 +1,18 @@
+import java.awt.Color;
+
 import javax.swing.*;
 public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		JFrame myWindow = new JFrame();
-		JButton jb = new JButton("Click me!");
-		JButton jb2 = new JButton("Coucou");
-		JButton jb3 = new JButton("C'est un bouton");
+		MyFrame myWindow = new MyFrame();
+		MyFrame mf1 = new MyFrame("Ma fenêtre");
+		MyFrame mf2 = new MyFrame(500, 800);
+		MyFrame mf3 = new MyFrame("Ma vraie fenêtre",500, 800, Color.green);
 		
-		JPanel panel = new JPanel();
-		
-		panel.add(jb2);
-		panel.add(jb);
-		panel.add(jb3);
-		
-		myWindow.add(panel);
-		jb.addActionListener((e) -> { 
+		mf3.getButton().addActionListener((e) -> { 
 			System.out.println("Coucou");
 		});
-		myWindow.setSize(200, 200);
-		myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		myWindow.setVisible(true);
-
 	}
 
 }
